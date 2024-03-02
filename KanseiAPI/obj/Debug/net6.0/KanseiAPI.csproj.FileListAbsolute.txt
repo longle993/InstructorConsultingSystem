@@ -1,0 +1,168 @@
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\appsettings.Development.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\appsettings.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\KanseiAPI.exe
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\KanseiAPI.deps.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\KanseiAPI.runtimeconfig.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\KanseiAPI.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\KanseiAPI.pdb
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.AssemblyReference.cache
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfoInputs.cache
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfo.cs
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CoreCompileInputs.cache
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.KanseiAPI.Microsoft.AspNetCore.StaticWebAssets.props
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.KanseiAPI.props
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.KanseiAPI.props
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.KanseiAPI.props
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets.pack.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets.build.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\staticwebassets.development.json
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\scopedcss\bundle\KanseiAPI.styles.css
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CopyComplete
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\refint\KanseiAPI.dll
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.pdb
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\KanseiAPI.genruntimeconfig.cache
+E:\KanseiAPI\KanseiAPI\KanseiAPI\obj\Debug\net6.0\ref\KanseiAPI.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\appsettings.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.exe
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.deps.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.runtimeconfig.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.pdb
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\AWSSDK.Core.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\DnsClient.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Bson.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Driver.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\SharpCompress.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\Snappier.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\ZstdSharp.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfoInputs.cache
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfo.cs
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.KanseiAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.KanseiAPI.props
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.KanseiAPI.props
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.KanseiAPI.props
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\scopedcss\bundle\KanseiAPI.styles.css
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CopyComplete
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\refint\KanseiAPI.dll
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.pdb
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.genruntimeconfig.cache
+D:\Microsoft Visual Studio\repo\Kansei\KanseiAPI\obj\Debug\net6.0\ref\KanseiAPI.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\appsettings.Development.json
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\appsettings.json
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.exe
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.deps.json
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.runtimeconfig.json
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.pdb
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\AWSSDK.Core.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\DnsClient.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Bson.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Driver.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\SharpCompress.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\Snappier.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\ZstdSharp.dll
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+E:\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.AssemblyReference.cache
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfoInputs.cache
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfo.cs
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CoreCompileInputs.cache
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cache
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.sourcelink.json
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.build.json
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.development.json
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.KanseiAPI.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.KanseiAPI.props
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.KanseiAPI.props
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.KanseiAPI.props
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.pack.json
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\scopedcss\bundle\KanseiAPI.styles.css
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CopyComplete
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.dll
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\refint\KanseiAPI.dll
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.pdb
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.genruntimeconfig.cache
+E:\Kansei\KanseiAPI\obj\Debug\net6.0\ref\KanseiAPI.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\appsettings.json
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.exe
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.deps.json
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.runtimeconfig.json
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\KanseiAPI.pdb
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\AWSSDK.Core.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\DnsClient.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Bson.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Driver.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\SharpCompress.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\Snappier.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\ZstdSharp.dll
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+D:\Long Le\Kansei\KanseiAPI\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.AssemblyReference.cache
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfoInputs.cache
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.AssemblyInfo.cs
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CoreCompileInputs.cache
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.KanseiAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.KanseiAPI.props
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.KanseiAPI.props
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.KanseiAPI.props
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\scopedcss\bundle\KanseiAPI.styles.css
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.csproj.CopyComplete
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.dll
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\refint\KanseiAPI.dll
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.pdb
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\KanseiAPI.genruntimeconfig.cache
+D:\Long Le\Kansei\KanseiAPI\obj\Debug\net6.0\ref\KanseiAPI.dll
