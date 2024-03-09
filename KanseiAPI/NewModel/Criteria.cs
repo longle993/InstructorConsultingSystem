@@ -27,6 +27,8 @@ namespace KanseiAPI.NewModel
 
         public string Id { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
+        public List<Kansei> ListKansei { get; set; }
+
         public List<ObjectId> KanseiList { get => _kanseiList; set => _kanseiList = value; }
     }
 }

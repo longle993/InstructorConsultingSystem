@@ -65,9 +65,17 @@ namespace KanseiAPI.Controllers
             {
                 var client = new MongoClient("mongodb+srv://kanseidemo123:kanseidemo123@cluster0.eetjn7s.mongodb.net/?retryWrites=true&w=majority");
                 var database = client.GetDatabase("Kansei");
-                var kanseiwords = database.GetCollection<Kansei>("KanseiWord");
-                List<Kansei> listKansei = kanseiwords.Find(new BsonDocument()).ToList();
-
+                var kanseiCollection = database.GetCollection<Kansei>("KanseiWord");
+                var criteriaCollection = database.GetCollection<Criteria>("Criteria");
+                //List<Kansei> listKansei = kanseiCollection.Find(new BsonDocument()).ToList();
+                var listKansei = await kanseiCollection.Aggregate()
+                 .Lookup(
+                foreignCollection: criteriaCollection,
+                localField: x => x.Type,
+                foreignField: x => x.Id,
+                @as: (Kansei kansei) => kansei.Criterias
+                )
+                .ToListAsync();
                 response.statusCode = System.Net.HttpStatusCode.OK;
                 response.data = listKansei;
                 return await Task.FromResult(response);
@@ -75,6 +83,7 @@ namespace KanseiAPI.Controllers
             catch (Exception e)
             {
                 response.statusCode = System.Net.HttpStatusCode.BadRequest;
+                response.message = e.Message;
                 Console.WriteLine(e.ToString());
                 return await Task.FromResult(response);
             }

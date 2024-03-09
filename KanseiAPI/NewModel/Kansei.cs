@@ -13,7 +13,8 @@ namespace KanseiAPI.NewModel
         private string _name;
 
         [BsonElement("type")]
-        private string _type;
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Type { get; set; }
 
         [BsonElement("point")]
         private double _point;
@@ -22,13 +23,14 @@ namespace KanseiAPI.NewModel
         {
             _id = id;
             _name = name;
-            _type = type;
+            Type = type;
             _point = point;
         }
         public Kansei() { }
         public string Id { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
-        public string Type { get => _type; set => _type = value; }
         public double Point { get => _point; set => _point = value; }
+        public List<Criteria> Criterias { get; set; }
+
     }
 }
