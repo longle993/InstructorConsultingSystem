@@ -30,7 +30,7 @@ namespace KanseiAPI.NewModel
         public string Id { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
         public double Point { get => _point; set => _point = value; }
-        public List<Criteria> Criterias { get; set; }
+        public List<Criteria>? Criterias { get; set; }
 
     }
 }
