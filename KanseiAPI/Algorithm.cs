@@ -14,7 +14,7 @@ namespace KanseiAPI
         private List<Criteria> mCriteria;   
         private List<Kansei> mListKansei;
         private Dictionary<string, string> mMapResult;
-        private List<List<KeyValuePair<string, string>>> listFinal;
+        private Dictionary<string,List<KeyValuePair<string, string>>> listFinal;
 
         /*  
             students: Danh sách điểm đánh giá
@@ -29,11 +29,11 @@ namespace KanseiAPI
             this.mListKansei = listKansei;
             this.mStudentPoints = new List<Evaluation>();
             this.mMapResult = new Dictionary<string, string>();
-            listFinal = new List<List<KeyValuePair<string, string>>>();
+            listFinal = new Dictionary<string,List<KeyValuePair<string, string>>>();
         }
 
         public Dictionary<string, string> MMapResult { get => mMapResult; }
-        public List<List<KeyValuePair<string, string>>> ListFinal { get => listFinal; set => listFinal = value; }
+        public Dictionary<string, List<KeyValuePair<string, string>>> ListFinal { get => listFinal; set => listFinal = value; }
 
         public void execute()
         {
@@ -117,7 +117,7 @@ namespace KanseiAPI
            
         }
 
-        public List<List<KeyValuePair<string,string>>> Sort(Dictionary<string,string> results)
+        public Dictionary<string, List<KeyValuePair<string, string>>> Sort(Dictionary<string,string> results)
         {
             //Tạo ra một Dictionary với mỗi key tương ứng với 1 list các đánh giá có điểm bằng với key đó
             Dictionary<string, List<KeyValuePair<string, string>>> filterValue = new Dictionary<string, List<KeyValuePair<string, string>>>();
@@ -298,19 +298,21 @@ namespace KanseiAPI
 
                 List<List<KeyValuePair<string, string>>> listFinal = new List<List<KeyValuePair<string, string>>>();
 
+                int i = 0;
                 listResults.ForEach(item =>
                 {
+
                     List<KeyValuePair<string, string>> newList = new List<KeyValuePair<string, string>>();
                     item.ForEach(newKey =>
                     {
                         newList.Add(new KeyValuePair<string, string>(listGV.Where(p => p.Key == newKey.Key).SingleOrDefault().Value,
                                                                     newKey.Value));
-
                     });
-                    listFinal.Add(newList);
+                    this.listFinal.Add(mCriteria[i].Id, newList);
+                    i++;
                 });
 
-                return listFinal;
+                return this.listFinal;
 
             }
             catch (Exception ex) 

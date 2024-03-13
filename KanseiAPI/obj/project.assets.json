@@ -1455,19 +1455,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\My Laptop\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Data\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
+      "projectUniqueName": "D:\\Long Le\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
       "projectName": "KanseiAPI",
-      "projectPath": "D:\\Data\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
-      "packagesPath": "C:\\Users\\My Laptop\\.nuget\\packages\\",
-      "outputPath": "D:\\Data\\InstructorConsultingSystem\\KanseiAPI\\obj\\",
+      "projectPath": "D:\\Long Le\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Long Le\\InstructorConsultingSystem\\KanseiAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\My Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1529,7 +1529,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
