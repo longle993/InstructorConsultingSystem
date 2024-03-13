@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KanseiAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+565cedb4478028e664064e56b0f25b4a5cf40d59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3781e32655b8d42a37318509f42008f270715965")]
 [assembly: System.Reflection.AssemblyProductAttribute("KanseiAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KanseiAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

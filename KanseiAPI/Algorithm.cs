@@ -53,16 +53,6 @@ namespace KanseiAPI
             //Tính trọng số của từng tiêu chí
             w = new AHP(criteriaPoint).Cal_mCompareTable();
 
-            /*for (int i = 0; i < mCriteria.Count; i++)
-            {
-                List<double> kanseiPointWithCriteria = mListKansei.Where(w => w.Type == mCriteria[i].Id).Select(p => p.Point).ToList();
-                List<double> temp = new AHP(kanseiPointWithCriteria).Cal_mCompareTable();
-                double valTemp = 0.0f;
-                for (int j = 0; j < temp.Count; j++)
-                    valTemp += temp[j] * kanseiPointWithCriteria[j] / temp.Count;
-                kanseiPoint.Add(valTemp);
-            }*/
-
             //Tính TOPSIS
             for (int i = 0; i < mTeachers.Count; i++)
             {
@@ -76,6 +66,7 @@ namespace KanseiAPI
 
             //Tính AHP
             List<List<double>> finalTeachersCriteria = new List<List<double>>();
+            List<Evaluation> detailEvaluateFinal = new List<Evaluation>(); 
 
             for (int i = 0; i < mCriteria.Count; i++)
             {
@@ -84,35 +75,28 @@ namespace KanseiAPI
                 {
                     teachersPoint.Add(item.Point);
                 });
+                detailEvaluateFinal.Add(mStudentPoints[i]);
+                
                 
                 finalTeachersCriteria.Add(new AHP(teachersPoint).Cal_mCompareTable());
             }
 
-            // this is the final ranking point
+            // Tính điềm final của giảng viên
             double[] teachersFinalPoint = new double[finalTeachersCriteria.Count];
 
             for (int i = 0; i < finalTeachersCriteria.Count; i++)
                 for (int j = 0; j < w.Count; j++)
                     teachersFinalPoint[i] += finalTeachersCriteria[i][j] * w[j];
 
-            // Multiply matrix finalCriteriasPoint with Weight (w array)
-            List<Evaluation> detailEvaluateFinal = new List<Evaluation>();
-            mStudentKansei.ForEach(item =>
-            {
-                for(int i = 0; i< mStudentPoints.Count; i++)
-                {
-                    if (mStudentPoints[i].Id == item.Id)
-                        detailEvaluateFinal.Add(item);
-                }
-            });
-
-
+            //Gán kết quả vào mMapResult
             for (int i = 0; i < teachersFinalPoint.Length; i++)
             {
                 mMapResult.Add(detailEvaluateFinal[i].Id, teachersFinalPoint[i].ToString());
             }
+            //Sắp xếp theo thứ tự giảm dần
             mMapResult = mMapResult.OrderByDescending(p=>p.Value).ToDictionary(x=>x.Key, x=>x.Value);
 
+            //Thực hiện sắp xếp cho các phần tử có điểm bằng nhau
             this.listFinal = Sort(mMapResult);
            
         }
@@ -168,16 +152,22 @@ namespace KanseiAPI
                             }
 
                             int countMax = 0;
+                            double maximumPoint = 0;
                             foreach (var item in listEvaluation)
                             {
                                 double currentPoint = 0;
                                 currentPoint = item.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point);
 
-                                int count = item.ListKansei.Where(p => p.Point == currentPoint && p.Type == mCriteria[i].Id).Count();
+                                if(currentPoint >= maximumPoint)
+                                    maximumPoint = currentPoint;
+                            }
 
+                            listEvaluation.ForEach(item =>
+                            {
+                                int count = item.ListKansei.Where(p => p.Point == maximumPoint && p.Type == mCriteria[i].Id).Count();
                                 if (count > countMax)
                                     countMax = count;
-                            }
+                            });
                             //Xét trường hợp - nếu có trong 1 tiêu chí chỉ có 1 điểm max thì sắp xếp theo thứ tự điểm max giảm dần, 2 điểm max trở lên thì tính tổng các điểm max giống nhau
                             switch (countMax)
                             {
