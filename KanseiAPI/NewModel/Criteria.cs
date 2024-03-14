@@ -16,11 +16,15 @@ namespace KanseiAPI.NewModel
         [BsonRepresentation(BsonType.ObjectId)]
         private List<ObjectId> _kanseiList;
 
-        public Criteria(string id, string name, List<ObjectId> kanseiList)
+        [BsonElement("point")]
+        private double _point;
+
+        public Criteria(string id, string name, List<ObjectId> kanseiList, double point)
         {
             _id = id;
             _name = name;
             _kanseiList = kanseiList;
+            _point = point;
 
         }
         public Criteria() { }
@@ -30,5 +34,6 @@ namespace KanseiAPI.NewModel
         public List<Kansei> ListKansei { get; set; }
 
         public List<ObjectId> KanseiList { get => _kanseiList; set => _kanseiList = value; }
+        public double Point { get => _point; set => _point = value; }
     }
 }

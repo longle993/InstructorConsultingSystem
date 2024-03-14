@@ -20,7 +20,6 @@ namespace KanseiAPI.Controllers
                 var database = client.GetDatabase("Kansei");
                 var criteriaCollection = database.GetCollection<Criteria>("Criteria");
                 var kanseiCollection = database.GetCollection<Kansei>("KanseiWord");
-                //List<Criteria> criterias = criteriaCollection.Find(new BsonDocument()).ToList();
                 var criterias = await criteriaCollection.Aggregate()
                     .Lookup(
                         foreignCollection: kanseiCollection,
