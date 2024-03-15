@@ -19,6 +19,17 @@ namespace KanseiAPI.Controllers
                 var client = new MongoClient("mongodb+srv://kanseidemo123:kanseidemo123@cluster0.eetjn7s.mongodb.net/?retryWrites=true&w=majority");
                 var database = client.GetDatabase("Kansei");
                 var evaluationTable = database.GetCollection<Evaluation>("EvaluateKansei");
+                var criteriaTable = database.GetCollection<Criteria>("Criteria");
+                List<Criteria> listCriteria = criteriaTable.Find(new BsonDocument()).ToList();
+
+                //Tính điểm tiêu chí
+                listCriteria.ForEach(item =>
+                {
+                    double pointCriteria = evaluation.ListKansei.Where(p => p.Type == item.Id).Average(P => P.Point);
+                    item.Point = pointCriteria;
+                    evaluation.ListCriteria.Add(item);
+                });
+
                 evaluationTable.InsertOne(evaluation);
                 response.statusCode = System.Net.HttpStatusCode.OK;
                 response.data = evaluation;

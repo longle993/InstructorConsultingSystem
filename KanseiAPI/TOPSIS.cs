@@ -10,12 +10,12 @@ namespace KanseiAPI
         private List<double> mWeights;
         private List<Criteria> mCriteria;
 
-        public TOPSIS(List<Evaluation> students, List<double> w, List<Criteria> criteria)
+        public TOPSIS(List<Evaluation> students, List<double> w)
         {
             this.mStudents = students;
-            this.mCriteria = criteria;
-            mAStar = new double[criteria.Count];
-            mAMinus = new double[criteria.Count];
+            this.mCriteria = students[0].ListCriteria;
+            mAStar = new double[this.mCriteria.Count];
+            mAMinus = new double[this.mCriteria.Count];
             mSStar = new double[students.Count];
             mSMinus = new double[students.Count];
             mWeights = w;
@@ -28,13 +28,13 @@ namespace KanseiAPI
                 double sum = 0.0f;
                 for (int j = 0; j < mStudents.Count; j++)
                 {
-                    sum += mStudents[j].ListKansei[i].Point * mStudents[j].ListKansei[i].Point;
+                    sum += mStudents[j].ListCriteria[i].Point * mStudents[j].ListCriteria[i].Point;
                 }
 
                 sum = Math.Sqrt(sum);
                     for (int j = 0; j < mStudents.Count; j++)
                     {
-                        mStudents[j].Standardized.Add(mStudents[j].ListKansei[i].Point / sum);
+                        mStudents[j].Standardized.Add(mStudents[j].ListCriteria[i].Point / sum);
 
                     }
             }

@@ -8,7 +8,6 @@ namespace KanseiAPI
     public class Algorithm
     {
         private List<Teacher> mTeachers;
-        private List<Evaluation> mStudentPointsList;
         private List<Evaluation> mStudentPoints;
         private List<Evaluation> mStudentKansei;
         private List<Criteria> mCriteria;   
@@ -20,12 +19,11 @@ namespace KanseiAPI
             students: Danh sách điểm đánh giá
             listKansei: Danh sách điểm lúc tư vấn sinh viên chọn
          */
-        public Algorithm(List<Evaluation> students,List<Evaluation> studentsWithKansei, List<Criteria> criteria, List<Teacher> teachers, List<Kansei> listKansei)
+        public Algorithm(List<Evaluation> listEvaluation,List<Criteria> criterias, List<Teacher> teachers, List<Kansei> listKansei)
         {
             this.mTeachers = teachers;
-            this.mCriteria = criteria;
-            this.mStudentPointsList = students;
-            this.mStudentKansei = studentsWithKansei;
+            this.mCriteria = criterias;
+            this.mStudentKansei = listEvaluation;
             this.mListKansei = listKansei;
             this.mStudentPoints = new List<Evaluation>();
             this.mMapResult = new Dictionary<string, string>();
@@ -56,8 +54,8 @@ namespace KanseiAPI
             //Tính TOPSIS
             for (int i = 0; i < mTeachers.Count; i++)
             {
-                mStudentPoints.Add(new TOPSIS(mStudentPointsList.Where(p => p.TeacherId == mTeachers[i].Id).ToList(),
-                                   w, mCriteria).execute());
+                mStudentPoints.Add(new TOPSIS(mStudentKansei.Where(p => p.TeacherId == mTeachers[i].Id).ToList(),
+                                   w).execute());
             }
 
 
@@ -71,7 +69,7 @@ namespace KanseiAPI
             for (int i = 0; i < mCriteria.Count; i++)
             {
                 List<double> teachersPoint = new List<double>();
-                this.mStudentPoints[i].ListKansei.ForEach(item =>
+                this.mStudentPoints[i].ListCriteria.ForEach(item =>
                 {
                     teachersPoint.Add(item.Point);
                 });

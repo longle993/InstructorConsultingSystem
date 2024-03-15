@@ -36,13 +36,10 @@ namespace KanseiAPI.Controllers
                 var criteriaTable = database.GetCollection<Criteria>("Criteria");
                 List<Criteria> criterias = criteriaTable.Find(new BsonDocument()).ToList();
 
-                var evaluationTable = database.GetCollection<Evaluation>("Evaluate2");
-                List<Evaluation> evaluations = evaluationTable.Find(new BsonDocument()).ToList();
-
                 var evaluateKansei = database.GetCollection<Evaluation>("EvaluateKansei");
                 List<Evaluation> evaluateKanseis = evaluateKansei.Find(new BsonDocument()).ToList();
 
-                Algorithm algorithm = new Algorithm(evaluations,evaluateKanseis, criterias,teachers,listKansei);
+                Algorithm algorithm = new Algorithm(evaluateKanseis, criterias,teachers,listKansei);
                 algorithm.execute();
 
                 response.statusCode = System.Net.HttpStatusCode.OK;
