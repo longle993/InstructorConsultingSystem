@@ -19,7 +19,7 @@ namespace KanseiAPI.NewModel
         private List<Kansei> _listKansei;
 
         [BsonElement("listPointCriteria")]
-        private List<Criteria> _listCriteria;
+        private List<Criteria> _listCriteria = new List<Criteria>();
 
         public List<double> Standardized = new List<double>();
         public double mCC;
