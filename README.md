@@ -18,7 +18,7 @@ This is the API of the lecturer recommendation system built using ASP.NET Core W
   - Id: The ID of the evaluation.
   - studentName: Name of the student who summitted the feedback.
   - listKansei: A list of adjectives that students have rated (the system provides pre-defined adjectives), each adjective includes the following information: id, type, name, and point.
-***
+
 - ***GET /api/get-all-evaluation:*** Retrieve all student feedback for a particular instructor.
 ### KanseiWord
 - ***POST /api/kansei-word:*** Enter your requirements for the desired lecturer by scoring the adjectives we provide. The system will return a list of lecturers along with the corresponding evaluation scores that match your requirements. Make sure that the evaluation is entered in the following JSON format:
