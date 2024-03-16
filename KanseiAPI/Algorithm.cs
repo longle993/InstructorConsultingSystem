@@ -10,16 +10,16 @@ namespace KanseiAPI
         private List<Teacher> mTeachers;
         private List<Evaluation> mStudentPoints;
         private List<Evaluation> mStudentKansei;
-        private List<Criteria> mCriteria;   
+        private List<Criteria> mCriteria;
         private List<Kansei> mListKansei;
         private Dictionary<string, string> mMapResult;
-        private Dictionary<string,List<KeyValuePair<string, string>>> listFinal;
+        private Dictionary<string, List<KeyValuePair<string, string>>> listFinal;
 
         /*  
             students: Danh sách điểm đánh giá
             listKansei: Danh sách điểm lúc tư vấn sinh viên chọn
          */
-        public Algorithm(List<Evaluation> listEvaluation,List<Criteria> criterias, List<Teacher> teachers, List<Kansei> listKansei)
+        public Algorithm(List<Evaluation> listEvaluation, List<Criteria> criterias, List<Teacher> teachers, List<Kansei> listKansei)
         {
             this.mTeachers = teachers;
             this.mCriteria = criterias;
@@ -27,7 +27,7 @@ namespace KanseiAPI
             this.mListKansei = listKansei;
             this.mStudentPoints = new List<Evaluation>();
             this.mMapResult = new Dictionary<string, string>();
-            listFinal = new Dictionary<string,List<KeyValuePair<string, string>>>();
+            listFinal = new Dictionary<string, List<KeyValuePair<string, string>>>();
         }
 
         public Dictionary<string, string> MMapResult { get => mMapResult; }
@@ -64,7 +64,7 @@ namespace KanseiAPI
 
             //Tính AHP
             List<List<double>> finalTeachersCriteria = new List<List<double>>();
-            List<Evaluation> detailEvaluateFinal = new List<Evaluation>(); 
+            List<Evaluation> detailEvaluateFinal = new List<Evaluation>();
 
             for (int i = 0; i < mCriteria.Count; i++)
             {
@@ -74,8 +74,8 @@ namespace KanseiAPI
                     teachersPoint.Add(item.Point);
                 });
                 detailEvaluateFinal.Add(mStudentPoints[i]);
-                
-                
+
+
                 finalTeachersCriteria.Add(new AHP(teachersPoint).Cal_mCompareTable());
             }
 
@@ -92,21 +92,21 @@ namespace KanseiAPI
                 mMapResult.Add(detailEvaluateFinal[i].Id, teachersFinalPoint[i].ToString());
             }
             //Sắp xếp theo thứ tự giảm dần
-            mMapResult = mMapResult.OrderByDescending(p=>p.Value).ToDictionary(x=>x.Key, x=>x.Value);
+            mMapResult = mMapResult.OrderByDescending(p => p.Value).ToDictionary(x => x.Key, x => x.Value);
 
             //Thực hiện sắp xếp cho các phần tử có điểm bằng nhau
             this.listFinal = Sort(mMapResult);
-           
+
         }
 
-        public Dictionary<string, List<KeyValuePair<string, string>>> Sort(Dictionary<string,string> results)
+        public Dictionary<string, List<KeyValuePair<string, string>>> Sort(Dictionary<string, string> results)
         {
             //Tạo ra một Dictionary với mỗi key tương ứng với 1 list các đánh giá có điểm bằng với key đó
             Dictionary<string, List<KeyValuePair<string, string>>> filterValue = new Dictionary<string, List<KeyValuePair<string, string>>>();
             List<int> sumEvaluation = new List<int>();
 
             foreach (var item in results)
-                {
+            {
                 foreach (var item2 in results)
                 {
                     if (item.Value == item2.Value && item.Key != item2.Key)
@@ -125,188 +125,224 @@ namespace KanseiAPI
                     }
                 }
             }
-
-            try
+            if (filterValue.Count > 0)
             {
-                List<List<Evaluation>> sortedList = new List<List<Evaluation>>();
-                List<int> countEvaluation = new List<int>();
-                List<int> listPosition = new List<int>();
-                List<double> listPoint = new List<double>(); //List chứa điểm đã được xử lý
-                List<KeyValuePair<string, string>> listGV = new List<KeyValuePair<string, string>>();
-
-
-                //Tính toán thứ tự cho từng bộ giá trị trùng nhau
-                Task taskSort = Task.Run(() =>
+                try
                 {
-                    foreach (var value in filterValue)
+                    List<List<Evaluation>> sortedList = new List<List<Evaluation>>();
+                    List<int> countEvaluation = new List<int>();
+                    List<int> listPosition = new List<int>();
+                    List<double> listPoint = new List<double>(); //List chứa điểm đã được xử lý
+                    List<KeyValuePair<string, string>> listGV = new List<KeyValuePair<string, string>>();
+
+
+                    //Tính toán thứ tự cho từng bộ giá trị trùng nhau
+                    Task taskSort = Task.Run(() =>
                     {
-                        for (int i = 0; i < mCriteria.Count; i++)
+                        foreach (var value in filterValue)
                         {
-                            List<Evaluation> listEvaluation = new List<Evaluation>();
-                            double maxPoint = 0;
-                            foreach (var item in value.Value)
+                            for (int i = 0; i < mCriteria.Count; i++)
                             {
-                                listEvaluation.Add(mStudentKansei.Where(p => p.Id == item.Key).SingleOrDefault());
-                            }
+                                List<Evaluation> listEvaluation = new List<Evaluation>();
+                                double maxPoint = 0;
+                                foreach (var item in value.Value)
+                                {
+                                    listEvaluation.Add(mStudentKansei.Where(p => p.Id == item.Key).SingleOrDefault());
+                                }
 
-                            int countMax = 0;
-                            double maximumPoint = 0;
-                            foreach (var item in listEvaluation)
-                            {
-                                double currentPoint = 0;
-                                currentPoint = item.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point);
+                                int countMax = 0;
+                                double maximumPoint = 0;
+                                foreach (var item in listEvaluation)
+                                {
+                                    double currentPoint = 0;
+                                    currentPoint = item.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point);
 
-                                if(currentPoint >= maximumPoint)
-                                    maximumPoint = currentPoint;
-                            }
+                                    if (currentPoint >= maximumPoint)
+                                        maximumPoint = currentPoint;
+                                }
 
-                            listEvaluation.ForEach(item =>
-                            {
-                                int count = item.ListKansei.Where(p => p.Point == maximumPoint && p.Type == mCriteria[i].Id).Count();
-                                if (count > countMax)
-                                    countMax = count;
-                            });
-                            //Xét trường hợp - nếu có trong 1 tiêu chí chỉ có 1 điểm max thì sắp xếp theo thứ tự điểm max giảm dần, 2 điểm max trở lên thì tính tổng các điểm max giống nhau
-                            switch (countMax)
-                            {
-                                case 1:
-                                    {
-                                        listEvaluation = listEvaluation.OrderByDescending(p => p.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point)).ToList();
-                                        sortedList.Add(listEvaluation);
-                                    }
-                                    break;
-                                default:
-                                    {
-                                        List<KeyValuePair<double, Evaluation>> sortListWith2SamePoint = new List<KeyValuePair<double, Evaluation>>();
-                                        foreach (var item in listEvaluation)
+                                listEvaluation.ForEach(item =>
+                                {
+                                    int count = item.ListKansei.Where(p => p.Point == maximumPoint && p.Type == mCriteria[i].Id).Count();
+                                    if (count > countMax)
+                                        countMax = count;
+                                });
+                                //Xét trường hợp - nếu có trong 1 tiêu chí chỉ có 1 điểm max thì sắp xếp theo thứ tự điểm max giảm dần, 2 điểm max trở lên thì tính tổng các điểm max giống nhau
+                                switch (countMax)
+                                {
+                                    case 1:
                                         {
-                                            double maxPointinCriteria = item.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point);
-
-                                            double totalPointInCriteria = item.ListKansei.Where(p => p.Point == maxPointinCriteria && p.Type == mCriteria[i].Id).Sum(p => p.Point);
-                                            sortListWith2SamePoint.Add(new KeyValuePair<double, Evaluation>(totalPointInCriteria, item));
+                                            listEvaluation = listEvaluation.OrderByDescending(p => p.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point)).ToList();
+                                            sortedList.Add(listEvaluation);
                                         }
+                                        break;
+                                    default:
+                                        {
+                                            List<KeyValuePair<double, Evaluation>> sortListWith2SamePoint = new List<KeyValuePair<double, Evaluation>>();
+                                            foreach (var item in listEvaluation)
+                                            {
+                                                double maxPointinCriteria = item.ListKansei.Where(p => p.Type == mCriteria[i].Id).Max(p => p.Point);
 
-                                        sortListWith2SamePoint = sortListWith2SamePoint.OrderByDescending(p => p.Key).ToList(); // Sắp xếp danh sách
+                                                double totalPointInCriteria = item.ListKansei.Where(p => p.Point == maxPointinCriteria && p.Type == mCriteria[i].Id).Sum(p => p.Point);
+                                                sortListWith2SamePoint.Add(new KeyValuePair<double, Evaluation>(totalPointInCriteria, item));
+                                            }
 
-                                        List<Evaluation> listEvaluations2SamePoint = sortListWith2SamePoint.Select(p => p.Value).ToList(); // Lấy ra danh sách các Evaluation từ danh sách đã sắp xếp
-                                        sortedList.Add(listEvaluations2SamePoint);
-                                    }
-                                    break;
+                                            sortListWith2SamePoint = sortListWith2SamePoint.OrderByDescending(p => p.Key).ToList(); // Sắp xếp danh sách
+
+                                            List<Evaluation> listEvaluations2SamePoint = sortListWith2SamePoint.Select(p => p.Value).ToList(); // Lấy ra danh sách các Evaluation từ danh sách đã sắp xếp
+                                            sortedList.Add(listEvaluations2SamePoint);
+                                        }
+                                        break;
+                                }
+
                             }
 
                         }
+                    });
 
-                    }
-                });
-
-                //Đếm số lượng phần tử trong mỗi bộ điểm trùng nhau
-                Task taskCountEvaluation = Task.Run(() =>
-                {
-                    foreach (var item in filterValue)
+                    //Đếm số lượng phần tử trong mỗi bộ điểm trùng nhau
+                    Task taskCountEvaluation = Task.Run(() =>
                     {
-                        countEvaluation.Add(item.Value.Count);
-                    }
-                });
-
-                //Lấy vị trí ban đầu của các phần tử trùng điểm
-                Task taskGetPosition = Task.Run(() =>
-                {
-                    foreach (var item in filterValue)
-                    {
-                        int index = 0;
-                        foreach (var item2 in results)
+                        foreach (var item in filterValue)
                         {
-                            if (item2.Value == item.Key)
-                            {
-                                listPosition.Add(index); break;
-                            }
-                            index++;
+                            countEvaluation.Add(item.Value.Count);
                         }
-                    }
-                });
+                    });
 
-                Task taskGetPoint = Task.Run(() =>
-                {
-                    foreach (var item in filterValue)
+                    //Lấy vị trí ban đầu của các phần tử trùng điểm
+                    Task taskGetPosition = Task.Run(() =>
                     {
-                        listPoint.Add(Convert.ToDouble(item.Key));
-                    }
-                });
+                        foreach (var item in filterValue)
+                        {
+                            int index = 0;
+                            foreach (var item2 in results)
+                            {
+                                if (item2.Value == item.Key)
+                                {
+                                    listPosition.Add(index); break;
+                                }
+                                index++;
+                            }
+                        }
+                    });
 
-                Task taskGetGV = Task.Run(() =>
+                    Task taskGetPoint = Task.Run(() =>
+                    {
+                        foreach (var item in filterValue)
+                        {
+                            listPoint.Add(Convert.ToDouble(item.Key));
+                        }
+                    });
+
+                    Task taskGetGV = Task.Run(() =>
+                    {
+                        foreach (var item in mMapResult)
+                        {
+
+                            Evaluation evaluation = this.mStudentPoints.Where(P => P.Id == item.Key).SingleOrDefault();
+                            Teacher teacher = this.mTeachers.Where(p => p.Id == evaluation.TeacherId).SingleOrDefault();
+                            listGV.Add(new KeyValuePair<string, string>(item.Key, teacher.Name));
+                        }
+                    });
+
+
+                    Task.WaitAll(taskSort, taskCountEvaluation, taskGetPosition, taskGetPoint);
+
+                    //Trả về kết quả
+                    List<List<KeyValuePair<string, string>>> listResults = new List<List<KeyValuePair<string, string>>>();
+
+                    // Duyệt qua mỗi phần tử trong sortedList
+                    sortedList.ForEach(item =>
+                    {
+                        // Tạo một danh sách mới cho mỗi vòng lặp
+                        List<KeyValuePair<string, string>> convertDictionaryToList = new List<KeyValuePair<string, string>>();
+
+                        // Duyệt qua mỗi phần tử trong mMapResult và thêm vào danh sách convertDictionaryToList
+                        foreach (var kvp in mMapResult)
+                        {
+                            convertDictionaryToList.Add(new KeyValuePair<string, string>(kvp.Key, kvp.Value));
+                        }
+
+                        // Duyệt qua mỗi vị trí trong listPosition và thực hiện các thay đổi cần thiết
+                        for (int i = 0; i < listPosition.Count; i++)
+                        {
+                            int indexSortedList = 0;
+
+                            for (int j = listPosition[i]; j < (listPosition[i] + countEvaluation[i]); j++)
+                            {
+                                if (indexSortedList < item.Count)
+                                {
+                                    convertDictionaryToList[j] = new KeyValuePair<string, string>(item[indexSortedList].Id, listPoint[i].ToString());
+                                    indexSortedList++;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("indexSortedList vượt quá độ dài của item.");
+                                }
+                            }
+                        }
+                        listResults.Add(convertDictionaryToList);
+                    });
+
+
+                    List<List<KeyValuePair<string, string>>> listFinal = new List<List<KeyValuePair<string, string>>>();
+
+                    int i = 0;
+                    listResults.ForEach(item =>
+                    {
+
+                        List<KeyValuePair<string, string>> newList = new List<KeyValuePair<string, string>>();
+                        item.ForEach(newKey =>
+                        {
+                            newList.Add(new KeyValuePair<string, string>(listGV.Where(p => p.Key == newKey.Key).SingleOrDefault().Value,
+                                                                        newKey.Value));
+                        });
+                        this.listFinal.Add(mCriteria[i].Name, newList);
+                        i++;
+                    });
+
+                    return this.listFinal;
+
+                }
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
+                    return null;
+                }
+
+            }
+            else
+            {
+
+                try
+                {
+                    List<KeyValuePair<string, string>> newList = new List<KeyValuePair<string, string>>();
+                    List<KeyValuePair<string, string>> listGV = new List<KeyValuePair<string, string>>();
+
                     foreach (var item in mMapResult)
                     {
-                        
+
                         Evaluation evaluation = this.mStudentPoints.Where(P => P.Id == item.Key).SingleOrDefault();
                         Teacher teacher = this.mTeachers.Where(p => p.Id == evaluation.TeacherId).SingleOrDefault();
                         listGV.Add(new KeyValuePair<string, string>(item.Key, teacher.Name));
                     }
-                });
 
-
-                Task.WaitAll(taskSort, taskCountEvaluation, taskGetPosition, taskGetPoint);
-
-                //Trả về kết quả
-                List<List<KeyValuePair<string, string>>> listResults = new List<List<KeyValuePair<string, string>>>();
-
-                // Duyệt qua mỗi phần tử trong sortedList
-                sortedList.ForEach(item =>
-                {
-                    // Tạo một danh sách mới cho mỗi vòng lặp
-                    List<KeyValuePair<string, string>> convertDictionaryToList = new List<KeyValuePair<string, string>>();
-
-                    // Duyệt qua mỗi phần tử trong mMapResult và thêm vào danh sách convertDictionaryToList
-                    foreach (var kvp in mMapResult)
+                    int i = 0;
+                    foreach (var item in mMapResult)
                     {
-                        convertDictionaryToList.Add(new KeyValuePair<string, string>(kvp.Key, kvp.Value));
+                        KeyValuePair<string, string> result = new KeyValuePair<string, string>(listGV[i].Value, item.Value);
+                        newList.Add(result);
+                        i++;
                     }
-
-                    // Duyệt qua mỗi vị trí trong listPosition và thực hiện các thay đổi cần thiết
-                    for (int i = 0; i < listPosition.Count; i++)
-                    {
-                        int indexSortedList = 0;
-
-                        for (int j = listPosition[i]; j < (listPosition[i] + countEvaluation[i]); j++)
-                        {
-                            if (indexSortedList < item.Count)
-                            {
-                                convertDictionaryToList[j] = new KeyValuePair<string, string>(item[indexSortedList].Id, listPoint[i].ToString());
-                                indexSortedList++;
-                            }
-                            else
-                            {
-                                Console.WriteLine("indexSortedList vượt quá độ dài của item.");
-                            }
-                        }
-                    }
-                    listResults.Add(convertDictionaryToList);
-                });
-
-
-                List<List<KeyValuePair<string, string>>> listFinal = new List<List<KeyValuePair<string, string>>>();
-
-                int i = 0;
-                listResults.ForEach(item =>
+                    this.ListFinal.Add("Result", newList);
+                    return this.ListFinal;
+                }
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
+                    return null;
+                }
 
-                    List<KeyValuePair<string, string>> newList = new List<KeyValuePair<string, string>>();
-                    item.ForEach(newKey =>
-                    {
-                        newList.Add(new KeyValuePair<string, string>(listGV.Where(p => p.Key == newKey.Key).SingleOrDefault().Value,
-                                                                    newKey.Value));
-                    });
-                    this.listFinal.Add(mCriteria[i].Id, newList);
-                    i++;
-                });
-
-                return this.listFinal;
-
-            }
-            catch (Exception ex) 
-            {
-                Console.WriteLine(ex.Message);
-                return null;
             }
         }
 

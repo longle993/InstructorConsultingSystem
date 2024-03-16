@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Long Le\\Code quá 180'\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj": {}
+    "D:\\Long Le\\Code quá 180'\\LecturerConsultingSystem\\KanseiAPI\\KanseiAPI.csproj": {}
   },
   "projects": {
-    "D:\\Long Le\\Code quá 180'\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj": {
+    "D:\\Long Le\\Code quá 180'\\LecturerConsultingSystem\\KanseiAPI\\KanseiAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Long Le\\Code quá 180'\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
+        "projectUniqueName": "D:\\Long Le\\Code quá 180'\\LecturerConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
         "projectName": "KanseiAPI",
-        "projectPath": "D:\\Long Le\\Code quá 180'\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
+        "projectPath": "D:\\Long Le\\Code quá 180'\\LecturerConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Long Le\\Code quá 180'\\InstructorConsultingSystem\\KanseiAPI\\obj\\",
+        "outputPath": "D:\\Long Le\\Code quá 180'\\LecturerConsultingSystem\\KanseiAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

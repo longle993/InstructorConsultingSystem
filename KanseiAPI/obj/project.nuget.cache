@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jrtqqJaoB8TysFNcPu5V9Aigu/tAFU8KI+04kCZd8YA5YWYFifThc7HbPJuDEPLZFm/12l5oFc+kRcvscEOj2A==",
+  "dgSpecHash": "Lj4c9Vpv8zJxVzDHeWvBochlZVx6IBfQezwlzDKPP80uHLbhU7bvXwmwF7XmAnWf/PLZxPmEavnISa6ck3aZAg==",
   "success": true,
-  "projectFilePath": "D:\\Long Le\\Code quá 180'\\InstructorConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
+  "projectFilePath": "D:\\Long Le\\Code quá 180'\\LecturerConsultingSystem\\KanseiAPI\\KanseiAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
