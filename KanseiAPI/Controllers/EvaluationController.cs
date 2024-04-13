@@ -23,12 +23,12 @@ namespace KanseiAPI.Controllers
                 List<Criteria> listCriteria = criteriaTable.Find(new BsonDocument()).ToList();
 
                 //Tính điểm tiêu chí
-                listCriteria.ForEach(item =>
+                /*listCriteria.ForEach(item =>
                 {
                     double pointCriteria = evaluation.ListKansei.Where(p => p.Type == item.Id).Average(P => P.Point);
                     item.Point = pointCriteria;
                     evaluation.ListCriteria.Add(item);
-                });
+                });*/
 
                 evaluationTable.InsertOne(evaluation);
                 response.statusCode = System.Net.HttpStatusCode.OK;

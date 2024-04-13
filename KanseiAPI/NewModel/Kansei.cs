@@ -12,24 +12,15 @@ namespace KanseiAPI.NewModel
         [BsonElement("name")]
         private string _name;
 
-        [BsonElement("type")]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Type { get; set; }
 
-        [BsonElement("point")]
-        private double _point;
-
-        public Kansei(string id, string name, string type, double point)
+        public Kansei(string id, string name)
         {
             _id = id;
             _name = name;
-            Type = type;
-            _point = point;
         }
         public Kansei() { }
         public string Id { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
-        public double Point { get => _point; set => _point = value; }
         public List<Criteria>? Criterias { get; set; }
 
     }

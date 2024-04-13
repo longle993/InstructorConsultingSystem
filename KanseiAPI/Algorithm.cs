@@ -11,7 +11,7 @@ namespace KanseiAPI
         private List<Evaluation> mStudentPoints;
         private List<Evaluation> mStudentKansei;
         private List<Criteria> mCriteria;
-        private List<Kansei> mListKansei;
+        private List<KanseiSolve> mListKansei;
         private Dictionary<string, string> mMapResult;
         private Dictionary<string, List<KeyValuePair<string, string>>> listFinal;
 
@@ -19,9 +19,9 @@ namespace KanseiAPI
             students: Danh sách điểm đánh giá
             listKansei: Danh sách điểm lúc tư vấn sinh viên chọn
          */
-        public Algorithm(List<Evaluation> listEvaluation, List<Criteria> criterias, List<Teacher> teachers, List<Kansei> listKansei)
+        public Algorithm(List<Evaluation> listEvaluation, List<Criteria> criterias, List<Teacher> teachers, List<KanseiSolve> listKansei)
         {
-            this.mTeachers = teachers;
+            this.mTeachers = teachers; //Danh sách GV
             this.mCriteria = criterias;
             this.mStudentKansei = listEvaluation;
             this.mListKansei = listKansei;
@@ -66,7 +66,7 @@ namespace KanseiAPI
             List<List<double>> finalTeachersCriteria = new List<List<double>>();
             List<Evaluation> detailEvaluateFinal = new List<Evaluation>();
 
-            for (int i = 0; i < mCriteria.Count; i++)
+            for (int i = 0; i < mStudentPoints.Count; i++)
             {
                 List<double> teachersPoint = new List<double>();
                 this.mStudentPoints[i].ListCriteria.ForEach(item =>

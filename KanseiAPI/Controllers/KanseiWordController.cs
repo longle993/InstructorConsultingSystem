@@ -22,8 +22,8 @@ namespace KanseiAPI.Controllers
             kanseiPreprocess = new List<Kansei>();
         }
 
-        [HttpPost("",Name = "Advise")]
-        public async Task<ActionResult<ResponseInfo>> AddPointAdvise(List<Kansei> listKansei)
+        [HttpPost("get-advise")]
+        public async Task<ActionResult<ResponseInfo>> AddPointAdvise(List<KanseiSolve> listKansei,string idSubject)
         {
             ResponseInfo response = new ResponseInfo();
             try
@@ -35,11 +35,12 @@ namespace KanseiAPI.Controllers
 
                 var criteriaTable = database.GetCollection<Criteria>("Criteria");
                 List<Criteria> criterias = criteriaTable.Find(new BsonDocument()).ToList();
-
+                ObjectId objectId = ObjectId.Parse(idSubject);
                 var evaluateKansei = database.GetCollection<Evaluation>("EvaluateKansei");
-                List<Evaluation> evaluateKanseis = evaluateKansei.Find(new BsonDocument()).ToList();
+                List<Evaluation> evaluations = evaluateKansei.Find(new BsonDocument()).ToList();
+                List<Evaluation> evalSort = evaluations.Where(p => p.Id_subject.Equals(objectId)).ToList();
 
-                Algorithm algorithm = new Algorithm(evaluateKanseis, criterias,teachers,listKansei);
+                Algorithm algorithm = new Algorithm(evalSort, criterias,teachers,listKansei);
                 algorithm.execute();
 
                 response.statusCode = System.Net.HttpStatusCode.OK;
@@ -49,6 +50,7 @@ namespace KanseiAPI.Controllers
             catch (Exception e)
             {
                 response.statusCode = System.Net.HttpStatusCode.BadRequest;
+                response.message  = e.Message;
                 Console.WriteLine(e.ToString());
                 return await Task.FromResult(response);
             }
@@ -62,7 +64,7 @@ namespace KanseiAPI.Controllers
             {
                 var client = new MongoClient("mongodb+srv://kanseidemo123:kanseidemo123@cluster0.eetjn7s.mongodb.net/?retryWrites=true&w=majority");
                 var database = client.GetDatabase("Kansei");
-                var kanseiCollection = database.GetCollection<Kansei>("KanseiWord");
+                var kanseiCollection = database.GetCollection<KanseiSolve>("KanseiWord");
                 var criteriaCollection = database.GetCollection<Criteria>("Criteria");
                 //List<Kansei> listKansei = kanseiCollection.Find(new BsonDocument()).ToList();
                 var listKansei = await kanseiCollection.Aggregate()
