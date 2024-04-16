@@ -13,7 +13,7 @@ namespace KanseiAPI.Controllers
     public class EvaluationController : ControllerBase
     {
         [HttpPost("", Name = "PostNewEvaluate")]
-        public async Task<ActionResult<ResponseInfo>> PostNewEvaluation(string evaluation)
+        public async Task<ActionResult<ResponseInfo>> PostNewEvaluation(EvaluationInput evaluation)
         {
             ResponseInfo response = new ResponseInfo();
             try
@@ -24,7 +24,7 @@ namespace KanseiAPI.Controllers
                 var criteriaTable = database.GetCollection<Criteria>("Criteria");
                 List<Criteria> listCriteria = criteriaTable.Find(new BsonDocument()).ToList();
 
-                var evaluationInput = JsonConvert.DeserializeObject<EvaluationInput>(evaluation);
+                //var evaluationInput = JsonConvert.DeserializeObject<EvaluationInput>(evaluation);
 
                 //Tính điểm tiêu chí
                 /*listCriteria.ForEach(item =>
@@ -34,7 +34,7 @@ namespace KanseiAPI.Controllers
                     evaluation.ListCriteria.Add(item);
                 });*/
 
-                evaluationTable.InsertOne(evaluationInput);
+                evaluationTable.InsertOne(evaluation);
                 response.statusCode = System.Net.HttpStatusCode.OK;
                 response.data = evaluation;
                 return await Task.FromResult(response);
