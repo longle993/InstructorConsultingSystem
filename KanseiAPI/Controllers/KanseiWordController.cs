@@ -35,10 +35,9 @@ namespace KanseiAPI.Controllers
 
                 var criteriaTable = database.GetCollection<Criteria>("Criteria");
                 List<Criteria> criterias = criteriaTable.Find(new BsonDocument()).ToList();
-                ObjectId objectId = ObjectId.Parse(idSubject);
                 var evaluateKansei = database.GetCollection<Evaluation>("EvaluateKansei");
                 List<Evaluation> evaluations = evaluateKansei.Find(new BsonDocument()).ToList();
-                List<Evaluation> evalSort = evaluations.Where(p => p.Id_subject.Equals(objectId)).ToList();
+                List<Evaluation> evalSort = evaluations.Where(p => p.Id_subject.Equals(idSubject)).ToList();
 
                 Algorithm algorithm = new Algorithm(evalSort, criterias,teachers,listKansei);
                 algorithm.execute();

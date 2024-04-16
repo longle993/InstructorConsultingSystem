@@ -23,7 +23,7 @@ namespace KanseiAPI.NewModel
 
         [BsonElement("id_subject")]
         [BsonRepresentation(BsonType.ObjectId)]
-        private ObjectId id_subject;
+        private string id_subject;
 
         public List<double> Standardized = new List<double>();
         public double mCC;
@@ -33,7 +33,7 @@ namespace KanseiAPI.NewModel
         public string TeacherId { get => _teacherId; set => _teacherId = value; }
         public List<KanseiSolve> ListKansei { get => _listKansei; set => _listKansei = value; }
         public List<Criteria> ListCriteria { get => _listCriteria; set => _listCriteria = value; }
-        public ObjectId Id_subject { get => id_subject; set => id_subject = value; }
+        public string Id_subject { get => id_subject; set => id_subject = value; }
 
         public Evaluation(string id, string studentName, string teacherId, List<KanseiSolve> listKansei)
         {

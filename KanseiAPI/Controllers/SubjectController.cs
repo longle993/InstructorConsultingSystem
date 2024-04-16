@@ -26,6 +26,8 @@ namespace KanseiAPI.Controllers
                 var subjectTable = database.GetCollection<Subject>("Subject");
                 List<Subject> subjects = subjectTable.Find(new BsonDocument()).ToList();
 
+
+
                 response.statusCode = System.Net.HttpStatusCode.OK;
                 response.data = subjects;
                 return await Task.FromResult(response);
